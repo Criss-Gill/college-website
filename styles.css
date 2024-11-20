@@ -1,0 +1,951 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Top Header Section */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    border-bottom: 2px solid #f0f0f0;
+}
+.logo img {
+    width: 100px;
+}
+.contact-info {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #333;
+    font-size: 14px;
+}
+
+.contact-item a {
+    white-space: nowrap; /* Prevents line breaks in phone number */
+}
+
+.phone-number {
+    white-space: nowrap; /* Ensures phone number stays on one line */
+}
+
+.contact-item img {
+    width: 32px;
+    height: 32px;
+}
+.visit-now {
+    padding: 0.5rem 1.5rem;
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.visit-now:hover {
+    background-color: #e65c00;
+}
+
+/* Navbar Section */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 2rem;
+    background-color: #1a1a2e;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.nav-links {
+    display: flex;
+}
+.nav-links a {
+    color: #fff;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-size: 16px;
+}
+.nav-links a:hover {
+    color: #ff6600;
+}
+
+/* Menu Icon with Label */
+.menu-icon-container {
+    display: none;
+    align-items: center;
+    cursor: pointer;
+}
+.menu-icon {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+    filter: invert(1);
+}
+.menu-label {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+    .top-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        background-color: #1a1a2e;
+        width: 100%;
+        padding: 1rem;
+    }
+    .nav-links a {
+        margin: 0.5rem 0;
+    }
+    .menu-icon-container {
+        display: flex;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ensures the hero section covers the full viewport height */
+    overflow: hidden; /* Prevents content from overflowing the section */
+}
+.hero img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150%;
+    transform: translateY(0); /* Initial position */
+    transition: transform 0.1s ease-out; /* Smooth movement */
+    z-index: -1; /* Ensure it's behind the text */
+    object-fit: cover; /* Ensures the image doesn't distort */
+}
+
+/* Add the black transparent overlay */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
+    z-index: 1; /* Ensures the overlay is above the image but below the text */
+}
+.hero-text {
+    position: relative;
+    top: 40%; /* Centers the text vertically */
+    left: 50%; /* Centers the text horizontally */
+    transform: translate(-50%, -50%); /* Adjusts for the center alignment */
+    color: white;
+    text-align: center;
+    max-width: 90%; /* Prevents text from being too wide on smaller screens */
+    padding: 1rem;
+    z-index: 2; /* Ensures the text is above the overlay */
+}
+/* Apply animation to the heading */
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    opacity: 0; /* Start invisible */
+    transform: translateY(-50px); /* Start above its final position */
+    animation: fadeInFromTop 1.5s ease-out forwards; /* Trigger animation */
+}
+/* Animation for Paragraph (from bottom to top) */
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0; /* Start invisible */
+    transform: translateY(50px); /* Start below its final position */
+    animation: fadeInFromBottom 1.5s ease-out 0.5s forwards; /* Delayed animation */
+}
+
+/* Animation for Button (from bottom to top) */
+.hero-text button {
+    padding: 0.7rem 2rem;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    opacity: 0; /* Start invisible */
+    transform: translateY(50px); /* Start below its final position */
+    animation: fadeInFromBottom 1.5s ease-out 1s forwards; /* Delayed animation */
+}
+
+.hero-text button:hover {
+    background-color: #e65c00;
+}
+
+/* Adjust Hero Image Height for Smartphone Devices */
+@media (max-width: 480px) {
+    .hero {
+        height: 60vh; /* Adjust the height as needed */
+    }
+
+    .hero img {
+        object-position: center; /* Ensures the most important part of the image is visible */
+    }
+
+    .hero-text {
+        top: 50%; /* Re-center the text for the new height */
+    }
+
+    .hero-text h1 {
+        font-size: 1.8rem; /* Reduce heading size for smaller screens */
+    }
+
+    .hero-text p {
+        font-size: 1rem; /* Adjust text size for better readability */
+    }
+
+    .hero-text button {
+        font-size: 0.9rem; /* Adjust button size */
+        padding: 0.5rem 1rem; /* Adjust button padding */
+    }
+}
+
+/* Keyframes for fading in effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Fully transparent at the start */
+    }
+    100% {
+        opacity: 1; /* Fully visible at the end */
+    }
+}
+
+/* Apply the fade-in animation to the hero section */
+.hero img {
+    animation: fadeIn 2s ease-in-out; /* 2-second fade-in effect */
+    opacity: 0; /* Ensures it's hidden before animation starts */
+    animation-fill-mode: forwards; /* Keeps the final state (fully visible) */
+}
+
+/* Optional: Also apply it to the overlay if needed */
+.hero::before {
+    animation: fadeIn 2s ease-in-out;
+    opacity: 0; /* Hidden before animation starts */
+    animation-fill-mode: forwards;
+}
+
+/* Keyframes for fade-in effect from top */
+@keyframes fadeInFromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframes for fade-in effect from bottom */
+@keyframes fadeInFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+.hero-text button {
+    padding: 0.7rem 2rem;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.hero-text button:hover {
+    background-color: #e65c00;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    .hero-text p {
+        font-size: 1rem;
+    }
+    .hero-text button {
+        font-size: 0.9rem;
+        padding: 0.5rem 1.5rem;
+    }
+}
+
+/* Highlights Section */
+.highlights {
+    display: flex;
+    justify-content: space-between;
+    padding: 0rem;
+    background-color: #f7f7f7;
+    gap: 0rem; /* Add gap between boxes */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+.highlight {
+    flex: 1 1 22%; /* Allow boxes to take up space and wrap */
+    color: #555;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 1px;
+    min-width: 250px;
+}
+
+/* Add styles for images inside the highlight boxes */
+.highlight img {
+    width: 60px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 1rem; /* Add space between the image and the heading */
+    display: block; /* Ensure proper alignment */
+    margin-left: auto; /* Center the image horizontally */
+    margin-right: auto;
+    filter: invert(1);
+}
+
+/* Style for the 1st box - Orange background, white text */
+.highlight:nth-child(1) {
+    background-color: #ff6600; /* Orange */
+    color: white;
+}
+
+/* Style for the 2nd box - Purple background, white text */
+.highlight:nth-child(2) {
+    background-color: #1a1a2e; /* Purple */
+    color: white;
+}
+
+/* Style for the 3rd box - Orange background, white text */
+.highlight:nth-child(3) {
+    background-color: #ff6600; /* Orange */
+    color: white;
+}
+
+/* Style for the 4th box - Purple background, white text */
+.highlight:nth-child(4) {
+    background-color: #1a1a2e; /* Purple */
+    color: white;
+}
+
+.highlight h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+.highlight p {
+    font-size: 1rem;
+    color: inherit; /* Inherit text color from the parent */
+}
+
+/* Responsive Highlights Section for Mobile */
+@media (max-width: 768px) {
+    .highlights {
+        flex-direction: column;
+        align-items: center;
+    }
+    .highlight {
+        width: 100%;
+    }
+    .contact-item {
+        flex-direction: column; /* Stack email/phone icon and text */
+        align-items: flex-start;
+    }
+}
+
+/* Overall Offer Section */
+.offer {
+    padding: 2rem;
+    background-color: #f9f9f9;
+}
+
+.offer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem; /* Add consistent spacing between text and image */
+}
+
+/* Offer Text Section */
+.offer-text {
+    flex: 1;
+    padding: 1rem;
+    max-width: 500px;
+    text-align: left; /* Align text properly */
+}
+
+.offer-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.offer-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+.offer-highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns for larger screens */
+    gap: 1.5rem;
+}
+
+.offer-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.icon-circle {
+    width: 150px;
+    height: 60px;
+    background-color: #ff6b35;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensures no overflow from the child element */
+    padding: 0; /* Remove extra padding if any */
+    margin: 0 auto; /* Center the circle in its container */
+}
+
+.icon-circle img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain; /* Prevent distortion */
+    filter: invert(1);
+}
+
+/* Offer Image Section */
+.offer-image {
+    flex: 1;
+    display: block; /* Ensure the image is visible on desktops */
+    max-width: 500px; /* Limit image width to avoid excessive size */
+    width: 100%; /* Ensure it scales responsively */
+    margin: 0 auto; /* Center the image horizontally */
+    text-align: center; /* Align image properly */
+}
+
+.offer-image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .offer-container {
+        flex-direction: column; /* Stack text and image */
+        align-items: center; /* Center everything */
+    }
+
+    .offer-image {
+        display: none; /* Hide image on smaller screens */
+    }
+
+    .offer-highlights {
+        grid-template-columns: 1fr; /* One column for smaller screens */
+    }
+}
+
+/* Landscape Section */
+.landscape-section {
+    position: relative;
+    width: 100%;
+    height: 70vh; /* Adjust the height as needed */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.landscape-section img {
+    position: absolute;
+    top: 70%;
+    left: -20%;
+    width: 120%;
+    height: 180%;
+    object-fit: cover; /* Ensures the image covers the entire section */
+    transform: translateY(0); /* Initial position */
+    will-change: transform; /* Optimize rendering performance */
+}
+
+/* Orange Transparent Overlay */
+.landscape-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 102, 0, 0.445); /* Orange with 50% transparency */
+    z-index: 1; /* Ensure it's above the image */
+}
+
+/* Overlay Text Styling */
+.landscape-overlay {
+    position: absolute;
+    text-align: center;
+    color: white;
+    z-index: 2; /* Ensure it's above the overlay */
+    max-width: 80%; /* Prevent text from being too wide */
+    padding: 1rem;
+}
+
+.landscape-overlay h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.7); /* Adds a subtle text shadow */
+}
+
+.landscape-overlay p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+    text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.6); /* Adds a subtle text shadow */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .landscape-section {
+        height: 50vh; /* Adjust height for smaller screens */
+    }
+
+    .landscape-section img {
+        object-position: 65% center;
+    }
+
+    .landscape-overlay h1 {
+        font-size: 2rem;
+    }
+
+    .landscape-overlay p {
+        font-size: 1rem;
+    }
+}
+
+/* Courses Section Styling */
+.courses-section {
+    background-color: #ffffff; /* White background */
+    padding: 3rem 1.5rem; /* Add spacing inside the box */
+    text-align: center; /* Center align text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a lifted effect */
+    margin: 2rem auto; /* Add spacing above and below */
+    max-width: 900px; /* Default max width for smaller screens */
+    border-radius: 8px; /* Rounded corners for better aesthetics */
+}
+
+.courses-section h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #333333; /* Darker text for contrast */
+}
+
+.courses-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555555; /* Slightly muted text color for readability */
+    margin: 0.5rem 0;
+}
+
+/* White Boxes Section */
+.courses-box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.course-box {
+    background-color: #fff;
+    padding: 1.5rem;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-box h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.course-box p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.course-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Elevates on hover */
+}
+
+/* Increase Width on Desktop Screens */
+@media (min-width: 1024px) {
+    .courses-section {
+        max-width: 1200px; /* Maximize the width for desktops */
+        padding: 4rem 2rem; /* Add more padding for larger screens */
+    }
+}
+
+
+/* Admission Enquiry Section */
+.admission-enquiry {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('images/image11.jpg'); /* Background image for entire section */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Optional: parallax effect */
+    padding: 3rem 0;
+    color: #fff; /* Make text white for contrast */
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Overlay for Darkening Image */
+.admission-enquiry::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.486); /* Dark overlay */
+    z-index: 1;
+}
+
+/* Flex Container for Form Content */
+.admission-container {
+    position: relative;
+    display: flex;
+    flex-direction: row; /* Form and space side-by-side */
+    width: 90%;
+    max-width: 1200px;
+    z-index: 2;
+}
+
+/* Empty Space on the Left */
+.admission-space {
+    flex: 0.5;
+}
+
+/* Form Section */
+.admission-form {
+    flex: 0.5;
+    background: rgba(224, 220, 220, 0);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.admission-form h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.admission-form p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: #ffffff;
+}
+
+/* Placeholder Text */
+.admission-form input::placeholder,
+.admission-form textarea::placeholder {
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 400;
+    opacity: 1;
+}
+
+/* Input Fields */
+.admission-form input,
+.admission-form select,
+.admission-form textarea {
+    width: 100%;
+    padding: 0.5rem 0;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    outline: none;
+    font-size: 1.2rem; /* Increase font size */
+    color: #ffffff;
+    background: none;
+}
+
+.admission-form input:focus,
+.admission-form textarea:focus,
+.admission-form select:focus {
+    border-bottom: 1px solid #ff6a00;
+}
+
+.admission-form textarea {
+    resize: none;
+}
+
+/* Dropdown Field Styling */
+.admission-form select {
+    width: 100%;
+    padding: 0.5rem 0;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    outline: none;
+    font-size: 1.2rem;
+    color: #ffffff;
+    background: none;
+    cursor: pointer;
+}
+
+.admission-form select:focus {
+    border-bottom: 1px solid #ff6a00;
+}
+
+/* Style for the selected option */
+.admission-form select option {
+    font-size: 1.4rem; /* Increase font size of options */
+    color: #333; /* Option text color */
+    background: #ffffff; /* Option background color */
+}
+
+/* Change styling for hovered option in dropdown */
+.admission-form select option:hover {
+    background: #ff6a00; /* Highlighted background */
+    color: #ffffff; /* Highlighted text color */
+}
+
+/* Mobile-specific styles for the dropdown */
+@media (max-width: 768px) {
+    .admission-form select {
+        font-size: 1.2rem; /* Adjust font size for mobile dropdown field */
+        padding: 0.7rem 0; /* Adjust padding for better touch interaction */
+    }
+
+    .admission-form select option {
+        font-size: 1.2rem; /* Adjust font size for options on mobile */
+    }
+
+    .admission-form select:focus {
+        font-size: 1.2rem; /* Ensure consistent size when dropdown is focused */
+        border-bottom: 1px solid #ff6a00; /* Add focus border for better visibility */
+    }
+}
+
+
+/* Hidden Fields for International Students */
+#international-fields {
+    display: none; /* Initially hidden */
+    margin-top: 1.5rem;
+}
+
+/* Additional Fields Styling */
+#admission-form #international-fields input {
+    margin-top: 1rem;
+}
+
+/* Submit Button */
+.admission-form button {
+    background-color: #ff6a00;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1.5rem;
+}
+
+.admission-form button:hover {
+    background-color: #e55a00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .admission-container {
+        flex-direction: column;
+    }
+
+    .admission-form {
+        flex: 1;
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    .admission-space {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .admission-form h2 {
+        font-size: 2rem;
+    }
+
+    .admission-form p {
+        font-size: 0.9rem;
+    }
+
+    .admission-form input,
+    .admission-form select,
+    .admission-form textarea {
+        font-size: 1rem;
+    }
+
+    .admission-form button {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+
+/* Testimonials Section */
+.testimonials-section {
+    background-color: #f9f9f9;
+    padding: 4rem 1.5rem;
+    text-align: center;
+    border-radius: 8px;
+    margin: 2rem auto;
+    max-width: 1200px;
+}
+
+.testimonials-section h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #333333;
+}
+
+.testimonials-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555555;
+    margin-bottom: 2rem;
+}
+
+/* Testimonial Slider */
+.testimonial-slider-container {
+    overflow: hidden; /* Hide overflow for smooth transitions */
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.testimonial-slider {
+    display: flex; /* Arrange testimonials in a row */
+    transition: transform 0.5s ease-in-out; /* Smooth sliding effect */
+}
+
+.testimonial-box {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+}
+
+.testimonial-box img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.testimonial-box p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666666;
+}
+
+/* Add responsive design for smaller screens */
+@media (max-width: 768px) {
+    .testimonial-box p {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+/* Footer Section */
+footer {
+    background-color: #1a1a2e;
+    padding: 2rem;
+    color: white;
+    text-align: center;
+}
+.footer-logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+.footer-links a:hover {
+    color: #ff6600;
+}

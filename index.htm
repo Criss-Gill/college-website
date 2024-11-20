@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <script src="script.js"></script>
+
+    <!-- Top Header Section -->
+    <header>
+        <div class="top-header">
+            <div class="logo">
+                <img src="images/logo-image.png" alt="College Logo">
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <img src="icons/email.gif" alt="Email Icon"> <!-- Replace with appropriate email icon -->
+                    <span>Email: <a href="mailto:youremail@email.com">youremail@email.com</a></span>
+                </div>
+                <div class="contact-item">
+                    <img src="icons/phone.gif" alt="Phone Icon"> <!-- Replace with appropriate phone icon -->
+                    <span>Call Us: <a href="tel:+1235235598">+1235 2355 98</a></span>
+                </div>
+            </div>
+            <button class="visit-now">Visit Now</button>
+        </div>
+    </header>
+
+    <!-- Navigation Section -->
+    <nav class="navbar">
+        <!-- Menu Icon for Mobile -->
+        <div class="menu-icon-container" onclick="toggleMenu()">
+            <img src="icons/menu.png" alt="Menu Icon" class="menu-icon">
+            <span class="menu-label">MENU</span>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Courses</a>
+            <a href="#">Staff</a>
+            <a href="#">Blog</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="images/image1.jpg" alt="Hero Image">
+        <div class="hero-text">
+            <h1>University, College, School Education</h1>
+            <p>A supportive community where people of all backgrounds can connect.</p>
+            <button>Get Started</button>
+        </div>
+    </section>
+
+    <!-- Highlights Section -->
+    <section class="highlights">
+        <div class="highlight" id="experienced-teachers">
+            <img src="icons/teacher.png" alt="Teachers Icon">
+            <h3>Experienced Teachers</h3>
+            <p>Description for the new feature goes here.</p>
+        </div>
+        <div class="highlight" id="book-library">
+            <img src="icons/books.png" alt="Books Icon">
+            <h3>Book & Library</h3>
+            <p>Access to a well-stocked library with a wide range of books.</p>
+        </div>
+        <div class="highlight" id="special-education">
+            <img src="icons/education.png" alt="Special Education Icon">
+            <h3>Special Education</h3>
+            <p>Providing tailored education for all learning needs.</p>
+        </div>
+        <div class="highlight" id="sports-clubs">
+            <img src="icons/sports.png" alt="Sports Icon">
+            <h3>Sports Clubs</h3>
+            <p>Various sports clubs for fitness and recreation.</p>
+        </div>
+    </section>
+
+    <!-- What We Offer Section -->
+    <section class="offer">
+        <div class="offer-container">
+            <!-- Offer Text Section -->
+            <div class="offer-text">
+                <h2>What We Offer</h2>
+                <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word.</p>
+                <div class="offer-highlights">
+                    <div class="offer-item">
+                        <div class="icon-circle">
+                            <img src="icons/safety.png" alt="Safety Icon">
+                        </div>
+                        <div>
+                            <h3>Safety First</h3>
+                            <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
+                        </div>
+                    </div>
+                    <div class="offer-item">
+                        <div class="icon-circle">
+                            <img src="icons/class.png" alt="Regular Classes Icon">
+                        </div>
+                        <div>
+                            <h3>Regular Classes</h3>
+                            <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
+                        </div>
+                    </div>
+                    <div class="offer-item">
+                        <div class="icon-circle">
+                            <img src="icons/anti-raging.png" alt="Anti Raging Icon">
+                        </div>
+                        <div>
+                            <h3>Anti Raging</h3>
+                            <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
+                        </div>
+                    </div>
+                    <div class="offer-item">
+                        <div class="icon-circle">
+                            <img src="icons/sports.png" alt="Sports Icon">
+                        </div>
+                        <div>
+                            <h3>Sports Facilities</h3>
+                            <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Offer Image Section -->
+            <div class="offer-image">
+                <img src="images/anime.jpg" alt="Campus Image">
+            </div>
+        </div>
+    </section>
+    
+    <!-- Landscape Section with Overlay -->
+<section class="landscape-section">
+    <img src="images/image10.jpg" alt="Students Landscape">
+    <div class="landscape-overlay">
+        <h1>Welcome to a Bright Future</h1>
+        <p>Join our vibrant community of learners and dreamers.</p>
+        <p>Achieve your goals with top-notch education and support.</p>
+        <p>Be part of something extraordinary today.</p>
+    </div>
+</section>
+
+<!-- White Content Box Section -->
+<section class="courses-section">
+    <div class="courses-content">
+        <h2>Our Courses</h2>
+        <p>We offer a variety of courses designed to meet the needs of students from diverse backgrounds. From engineering to arts, business to technology, our programs are tailored to equip you with the skills and knowledge you need to succeed in your chosen field.</p>
+        <p>Explore our extensive curriculum and find the perfect course to achieve your goals.</p>
+    
+     <!-- New White Boxes Section -->
+     <div class="courses-box-container">
+        <div class="course-box">
+            <h3>Under Graduate</h3>
+            <p>Build a strong academic foundation with our comprehensive undergraduate programs, designed to prepare you for future career success.</p>
+        </div>
+        <div class="course-box">
+            <h3>Post Graduate</h3>
+            <p>Advance your expertise and knowledge with our specialized postgraduate courses, crafted to boost your professional prospects.</p>
+        </div>
+        <div class="course-box">
+            <h3>Skill Certificate</h3>
+            <p>Gain practical knowledge and certifications in specific skills to enhance your career opportunities in a competitive job market.</p>
+        </div>
+        <div class="course-box">
+            <h3>Paramedical</h3>
+            <p>Learn essential healthcare skills and techniques through our paramedical courses, tailored for aspiring medical professionals.</p>
+        </div>
+    </div>
+</div>
+</section>
+
+
+<!-- Admission Enquiry Section -->
+<section class="admission-enquiry">
+    <div class="admission-container">
+        <!-- Empty space on the left -->
+        <div class="admission-space"></div>
+
+        <!-- Request a Quote Form -->
+        <div class="admission-form">
+            <h2>Request A Quote</h2>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <form action="#" method="POST">
+                <!-- Name Fields -->
+                <input type="text" name="first-name" placeholder="First Name" required>
+                <input type="text" name="last-name" placeholder="Last Name">
+
+                <!-- Select Course/Query Dropdown -->
+                <select name="course-query" id="course-query" required>
+                    <option value="" disabled selected>Select Course/Query</option>
+                    <option value="undergraduate">Undergraduate</option>
+                    <option value="postgraduate">Postgraduate</option>
+                    <option value="skill-certificate">Skill Certificate</option>
+                    <option value="paramedical">Paramedical</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <!-- Student Type Dropdown -->
+                <select name="student-type" id="student-type" required>
+                    <option value="" disabled selected>Student Type</option>
+                    <option value="indian">Indian</option>
+                    <option value="international">International/Overseas</option>
+                </select>
+
+                <!-- Phone Number Field -->
+                <input type="tel" name="phone" placeholder="Phone Number" required pattern="[0-9]+" title="Enter a valid phone number.">
+
+                <!-- Email Address Field -->
+                <input type="email" name="email" placeholder="Email Address" required>
+
+                <!-- Dynamic Fields for International Students -->
+                <div id="international-fields" style="display: none;">
+                    <input type="text" name="country" placeholder="Country" required>
+                    <input type="text" name="province-city" placeholder="Province/City" required>
+                </div>
+
+                <!-- Message Field -->
+                <textarea name="message" rows="4" placeholder="Message"></textarea>
+
+                <!-- Submit Button -->
+                <button type="submit">Request A Quote</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Testimonials-section-->
+<section class="testimonials-section">
+    <h2>What Students Say About Us?</h2>
+    <p>Hear directly from our students about their experiences, challenges, and successes at our institution. Their words reflect the quality of education, support, and community we offer.</p>
+    <div class="testimonial-slider-container">
+        <div class="testimonial-slider">
+            <div class="testimonial-box">
+                <img src="students/student1.jpg" alt="Student 1">
+                <p>"This college changed my life! The faculty is supportive, and the learning environment is amazing."</p>
+            </div>
+            <div class="testimonial-box">
+                <img src="students/student2.jpeg" alt="Student 2">
+                <p>"The courses are well-structured, and the library resources are top-notch. Highly recommend!"</p>
+            </div>
+            <div class="testimonial-box">
+                <img src="students/student3.jpg" alt="Student 3">
+                <p>"I made lifelong friends and gained valuable knowledge that prepared me for the real world."</p>
+            </div>
+            <div class="testimonial-box">
+                <img src="students/student4.jpg" alt="Student 4">
+                <p>"The extracurricular activities and sports facilities here are outstanding. Truly a holistic experience!"</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">DBFGI</div>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
