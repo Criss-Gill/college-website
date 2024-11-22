@@ -394,6 +394,24 @@ body {
     }
 }
 
+/* Keyframes for bottom-to-top animation */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(180px); /* Start below the viewport */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* End in the original position */
+    }
+}
+
+/* Add an animation class */
+.animate-slide-up {
+    animation: slideUp 1.7s ease-out forwards; /* Smooth slide-up */
+}
+
+
 /* Overall Offer Section */
 .offer {
     padding: 2rem;
@@ -496,6 +514,28 @@ body {
         grid-template-columns: 1fr; /* One column for smaller screens */
     }
 }
+
+
+/* Apply the animation to the offer section */
+.offer {
+    animation: fadeInFromBottom 2.5s ease-out forwards;
+    opacity: 0; /* Initially hidden */
+}
+
+/* If you want to apply animation to child elements like offer-text or offer-image */
+.offer-text, .offer-image {
+    animation: fadeInFromBottom 2.5s ease-out forwards;
+    opacity: 0; /* Initially hidden */
+}
+
+.offer-text {
+    animation-delay: 0.4s; /* Delay to animate offer-text slightly after the offer-image */
+}
+
+.offer-image {
+    animation-delay: 1.6s; /* Delay to animate offer-image slightly after the offer-text */
+}
+
 
 /* Landscape Section */
 .landscape-section {
