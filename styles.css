@@ -916,7 +916,7 @@ body {
 }
 
 .testimonials-section p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.8;
     color: #555555;
     margin-bottom: 2rem;
@@ -958,34 +958,103 @@ body {
 /* Add responsive design for smaller screens */
 @media (max-width: 768px) {
     .testimonial-box p {
-        font-size: 0.9rem;
+        font-size: 1.2rem;
     }
 }
 
 
 
 /* Footer Section */
+/* Footer Section */
 footer {
     background-color: #1a1a2e;
     padding: 2rem;
     color: white;
-    text-align: center;
+    text-align: left; /* Align content to the left */
 }
-.footer-logo {
+
+/* Footer Container */
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Spread sections horizontally */
+    flex-wrap: wrap; /* Allow wrapping for mobile */
+    gap: 2rem; /* Add space between sections */
+}
+
+/* Footer Section */
+.footer-section {
+    flex: 1; /* Equal width sections */
+    min-width: 250px; /* Ensure sections don't shrink too much on smaller screens */
+}
+
+/* Footer Headings */
+.footer-heading {
     font-size: 1.8rem;
     font-weight: bold;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
+
+/* Footer Contact Info */
+.footer-contact-info {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-contact-info li {
+    margin: 1rem 0;
+}
+
+.footer-contact-info a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.footer-contact-info a:hover {
+    color: #ff6600;
+}
+
+/* Footer Links */
 .footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
+    list-style: none;
+    padding: 0;
 }
+
 .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.footer-links a:hover {
+    color: #ff6600;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-icon {
     color: #fff;
     text-decoration: none;
     font-size: 1rem;
 }
-.footer-links a:hover {
+
+.social-icon:hover {
     color: #ff6600;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Stack sections vertically on smaller screens */
+        align-items: flex-start; /* Align content to the left */
+    }
+
+    .footer-section {
+        margin-bottom: 2rem; /* Add spacing between stacked sections */
+    }
 }
