@@ -1,0 +1,116 @@
+/* Footer Section */
+footer {
+    background-color: #1a1a2e;
+    padding: 2rem;
+    color: white;
+    text-align: left; /* Align content to the left */
+}
+
+/* Footer Container */
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Spread sections horizontally */
+    flex-wrap: wrap; /* Allow wrapping for mobile */
+    gap: 2rem; /* Add space between sections */
+}
+
+/* Footer Section */
+.footer-section {
+    flex: 1; /* Equal width sections */
+    min-width: 250px; /* Ensure sections don't shrink too much on smaller screens */
+}
+
+/* Footer Headings */
+.footer-heading {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+/* Footer Contact Info */
+.footer-contact-info {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-contact-info li {
+    margin: 1rem 0;
+    display: flex;
+    align-items: center; /* Align icon and text horizontally */
+}
+
+.footer-contact-info a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Space between the icon and text */
+}
+
+.footer-contact-info a:hover {
+    color: #ff6600; /* Hover color effect for text */
+}
+
+.contact-icon {
+    width: 20px; /* Adjust the size of the icons */
+    height: 20px;
+    object-fit: contain; /* Ensure icons maintain their aspect ratio */
+}
+
+
+/* Footer Links */
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.footer-links a:hover {
+    color: #ff6600;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    flex-direction: column; /* Align social links vertically */
+    gap: 1rem; /* Space between each link */
+}
+
+.social-icon {
+    display: flex;
+    align-items: center; /* Align icon and text horizontally */
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    gap: 0.5rem; /* Space between icon and text */
+}
+
+.social-icon:hover {
+    color: #ff6600; /* Hover color effect for text */
+}
+
+.social-icon-img {
+    width: 20px; /* Adjust the size of the icons */
+    height: 20px;
+    object-fit: contain; /* Maintain aspect ratio of the icons */
+    filter: invert(1);
+}
+
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Stack sections vertically on smaller screens */
+        align-items: flex-start; /* Align content to the left */
+    }
+
+    .footer-section {
+        margin-bottom: 2rem; /* Add spacing between stacked sections */
+    }
+}
