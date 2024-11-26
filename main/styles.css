@@ -1,6 +1,161 @@
 
 /*index.html {body}*/
 
+/* Hero Section Styles */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ensures the hero section covers the full viewport height */
+    overflow: hidden; /* Prevents content from overflowing the section */
+}
+.hero img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150%;
+    object-fit: cover; /* Ensures the image doesn't distort */
+    transform: translateY(0); /* Initial position */
+    z-index: -1; /* Ensure it's behind the text */
+    transition: transform 0.1s ease-out; /* Smooth movement */
+    animation: fadeIn 2s ease-in-out; /* 2-second fade-in effect */
+    opacity: 0; /* Ensures it's hidden before animation starts */
+    animation-fill-mode: forwards; /* Keeps the final state (fully visible) */
+}
+
+/* Black Transparent Overlay */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
+    z-index: 1; /* Ensure the overlay is above the image but below the text */
+    animation: fadeIn 2s ease-in-out;
+    opacity: 0; /* Hidden before animation starts */
+    animation-fill-mode: forwards;
+}
+
+/* Hero Text Section */
+.hero-text {
+    position: relative;
+    top: 40%; /* Centers the text vertically */
+    left: 50%; /* Centers the text horizontally */
+    transform: translate(-50%, -50%); /* Adjusts for the center alignment */
+    color: white;
+    text-align: center;
+    max-width: 90%; /* Prevents text from being too wide on smaller screens */
+    padding: 1rem;
+    z-index: 2; /* Ensures the text is above the overlay */
+}
+
+/* Hero Text: Heading Animation */
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    opacity: 0; /* Start invisible */
+    transform: translateY(-50px); /* Start above its final position */
+    animation: fadeInFromTop 1.5s ease-out forwards; /* Trigger animation */
+}
+
+/* Hero Text: Paragraph Animation */
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0; /* Start invisible */
+    transform: translateY(50px); /* Start below its final position */
+    animation: fadeInFromBottom 1.5s ease-out 0.5s forwards; /* Delayed animation */
+}
+
+/* Hero Text: Button Styles & Animation */
+.hero-text button {
+    padding: 0.7rem 2rem;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    opacity: 0; /* Start invisible */
+    transform: translateY(50px); /* Start below its final position */
+    animation: fadeInFromBottom 1.5s ease-out 1s forwards; /* Delayed animation */
+}
+.hero-text button:hover {
+    background-color: #e65c00;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 2rem; /* Reduce heading size for medium screens */
+    }
+    .hero-text p {
+        font-size: 1rem; /* Adjust text size */
+    }
+    .hero-text button {
+        font-size: 0.9rem; /* Adjust button size */
+        padding: 0.5rem 1.5rem; /* Adjust button padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 60vh; /* Adjust the height for smaller screens */
+    }
+    .hero img {
+        object-position: center; /* Ensures the most important part of the image is visible */
+    }
+    .hero-text {
+        top: 50%; /* Re-center the text for the new height */
+    }
+    .hero-text h1 {
+        font-size: 1.8rem; /* Reduce heading size further */
+    }
+    .hero-text p {
+        font-size: 1rem; /* Adjust text size */
+    }
+    .hero-text button {
+        font-size: 0.9rem; /* Adjust button size */
+        padding: 0.5rem 1rem; /* Adjust button padding */
+    }
+}
+
+/* Keyframes for Fade-in Effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Fully transparent at the start */
+    }
+    100% {
+        opacity: 1; /* Fully visible at the end */
+    }
+}
+
+/* Keyframes for Fade-in from Top */
+@keyframes fadeInFromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px); /* Above its final position */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Settle into position */
+    }
+}
+
+/* Keyframes for Fade-in from Bottom */
+@keyframes fadeInFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(50px); /* Below its final position */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Settle into position */
+    }
+}
+
 
 /* Highlights Section */
 .highlights {
@@ -384,7 +539,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('images/bg/image11.jpg'); /* Background image for entire section */
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Optional: parallax effect */
