@@ -34,7 +34,16 @@ If you have any questions, suggestions, or concerns, feel free to reach out:
 - **Email:** [sukhvir9676@gmail.com]  
 - **GitHub Profile:** [Criss-Gill]  
 
-Thank you for respecting the intellectual property of this project.  
 
 ## License  
-This project is licensed under the [Creative Commons License]. See the `LICENSE` file for details.
+This project is licensed under the **Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License (CC BY-NC-ND 4.0)**.  
+
+### Important Notes:  
+1. The code in this repository is created by me and is protected by copyright.  
+2. The images used in this project are sourced from Google and may have their own copyrights.  
+   - You must not reuse or redistribute them without verifying their original license or obtaining permission.  
+3. Unauthorized use of this code or design for commercial purposes or duplication without permission will result in legal action.  
+
+For more information about the license, visit: [https://creativecommons.org/licenses/by-nc-nd/4.0/](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+Thank you for respecting the intellectual property of this project.
