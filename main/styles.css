@@ -230,10 +230,6 @@
     .highlight {
         width: 100%;
     }
-    .contact-item {
-        flex-direction: column; /* Stack email/phone icon and text */
-        align-items: flex-start;
-    }
 }
 
 /* Keyframes for bottom-to-top animation */

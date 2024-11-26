@@ -13,7 +13,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 1rem;
+    padding: 1rem 0.4rem;
     background-color: #fff;
     border-bottom: 2px solid #f0f0f0;
 }
@@ -126,5 +126,24 @@ body {
     }
     .nav-links.active {
         display: flex;
+    }
+}
+
+/* Extra Small Screen (320px or smaller) */
+@media (max-width: 320px) {
+    .top-header {
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .contact-info {
+        flex-direction: column;
+        gap: 0.5rem; /* Reduce spacing */
+    }
+    .contact-item {
+        justify-content: flex-start;
+    }
+    .visit-now {
+        align-self: stretch; /* Button takes full width */
+        text-align: center;
     }
 }
