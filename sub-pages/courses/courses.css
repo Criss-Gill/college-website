@@ -275,3 +275,42 @@
     color: #555;
 }
 
+/* Button container for alignment */
+.course-buttons {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+    margin-top: 10px;
+}
+
+/* Syllabus Button */
+.syllabus-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.syllabus-button:hover {
+    background-color: #13c04c;
+}
+
+/* Apply Now Button */
+.apply-now-button {
+    background-color: #fd8f36;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.apply-now-button:hover {
+    background-color: #000000;
+}
+
