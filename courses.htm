@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - dbfgi</title>
+    <link rel="stylesheet" href="header & footer/header.css">
+    <link rel="stylesheet" href="header & footer/footer.css">
+    <link rel="stylesheet" href="sub-pages/courses/courses.css">
+</head>
+<body>
+    <script src="header & footer/header.js"></script>
+    <script src="sub-pages/courses/courses.js"></script>
+
+    <!-- Top Header Section -->
+    <header>
+        <div class="top-header">
+            <div class="logo">
+                <img src="images/bg/logo-image.png" alt="College Logo">
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <img src="images/icons/email.gif" alt="Email Icon"> <!-- Replace with appropriate email icon -->
+                    <span><strong>Email:</strong> <a href="mailto:youremail@email.com">youremail@email.com</a></span>
+                </div>
+                <div class="contact-item">
+                    <img src="images/icons/phone.gif" alt="Phone Icon"> <!-- Replace with appropriate phone icon -->
+                    <span><strong>Call Us:</strong> <a href="tel:+1235235598">+1235 2355 98</a></span>
+                </div>
+            </div>
+            <button class="visit-now">Visit Now</button>
+        </div>
+    </header>
+
+    <!-- Navigation Section -->
+    <nav class="navbar">
+        <!-- Menu Icon for Mobile -->
+        <div class="menu-icon-container" onclick="toggleMenu()">
+            <img src="images/icons/menu.png" alt="Menu Icon" class="menu-icon">
+            <span class="menu-label">MENU</span>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="nav-links">
+            <a href="index.htm">Home</a>
+            <a href="about-us.htm">About</a>
+            <a href="#">Courses</a>
+            <a href="#">Staff</a>
+            <a href="#">Blog</a>
+            <a href="contact-us.htm">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="images/bg/image1.jpg" alt="Hero Image">
+        <div class="hero-text">
+            <h1>University, College, School Education</h1>
+            <p>A supportive community where people of all backgrounds can connect.</p>
+            <button>Get Started</button>
+        </div>
+    </section>
+
+    <!-- Our Courses Content Box Section -->
+<section class="courses-section">
+    <div class="courses-content">
+        <h2>Our Courses</h2>
+        <p>We offer a variety of courses designed to meet the needs of students from diverse backgrounds. From engineering to arts, business to technology, our programs are tailored to equip you with the skills and knowledge you need to succeed in your chosen field.</p>
+        <p>Explore our extensive curriculum and find the perfect course to achieve your goals.</p>
+        
+        <!-- Course Boxes Section -->
+        <div class="courses-box-container">
+            <div class="course-box" onclick="showCourses('undergraduate-courses')">
+                <img src="images/icons/under-graduate.png" alt="Undergraduate Icon" class="course-icon">
+                <h3>Under Graduate</h3>
+                <p>Build a strong academic foundation with our comprehensive undergraduate programs, designed to prepare you for future career success.</p>
+            </div>
+            <div class="course-box" onclick="showCourses('postgraduate-courses')">
+                <img src="images/icons/post-graduate.png" alt="Postgraduate Icon" class="course-icon">
+                <h3>Post Graduate</h3>
+                <p>Advance your expertise and knowledge with our specialized postgraduate courses, crafted to boost your professional prospects.</p>
+            </div>
+            <div class="course-box" onclick="showCourses('skill-certificate-courses')">
+                <img src="images/icons/skill-certificate.png" alt="Skill Certificate Icon" class="course-icon">
+                <h3>Skill Certificate</h3>
+                <p>Gain practical knowledge and certifications in specific skills to enhance your career opportunities in a competitive job market.</p>
+            </div>
+            <div class="course-box" onclick="showCourses('paramedical-courses')">
+                <img src="images/icons/paramedical.png" alt="Paramedical Icon" class="course-icon">
+                <h3>Paramedical</h3>
+                <p>Learn essential healthcare skills and techniques through our paramedical courses, tailored for aspiring medical professionals.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Dynamic Courses Section -->
+<section id="dynamic-courses-section" class="hidden">
+    <!-- Undergraduate Courses -->
+    <div id="undergraduate-courses" class="course-details hidden">
+        <h2>Undergraduate Courses</h2>
+        <div class="course-list">
+            <div class="course-item">
+                <h3>B.Tech Computer Science</h3>
+                <p>Master the fundamentals of computer science and prepare for a career in software development, AI, and other cutting-edge fields.</p>
+            </div>
+            <div class="course-item">
+                <h3>B.Tech Electronics</h3>
+                <p>Explore the world of electronics and communication with a focus on practical applications in modern technology.</p>
+            </div>
+            <div class="course-item">
+                <h3>BSCFT</h3>
+                <p>Build expertise in food technology and quality assurance to pursue a career in the food and beverage industry.</p>
+            </div>
+            <div class="course-item">
+                <h3>BSEIT</h3>
+                <p>Learn the essentials of information technology and prepare for a dynamic career in IT and software development.</p>
+            </div>
+            <div class="course-item">
+                <h3>BCA</h3>
+                <p>Develop a strong foundation in computer applications with this comprehensive program, ideal for aspiring IT professionals.</p>
+            </div>
+            <div class="course-item">
+                <h3>BBA</h3>
+                <p>Gain business knowledge and leadership skills with our Bachelor of Business Administration program.</p>
+            </div>
+            <div class="course-item">
+                <h3>BCOM Hons</h3>
+                <p>Specialize in commerce and finance with our in-depth Bachelor of Commerce Honors program.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Postgraduate Courses -->
+    <div id="postgraduate-courses" class="course-details hidden">
+        <h2>Postgraduate Courses</h2>
+        <div class="course-list">
+            <div class="course-item">
+                <h3>MBA</h3>
+                <p>Develop critical management, leadership, and strategic thinking skills with our MBA program, designed for aspiring business leaders.</p>
+            </div>
+            <div class="course-item">
+                <h3>MSc IT</h3>
+                <p>Advance your expertise in information technology with a focus on research and innovation in the IT field.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skill Certificate Courses -->
+    <div id="skill-certificate-courses" class="course-details hidden">
+        <h2>Skill Certificate Courses</h2>
+        <div class="course-list">
+            <div class="course-item">
+                <h3>Certificate Program in Medical Lab Technology</h3>
+                <p>Gain essential knowledge and skills in medical laboratory technology, including testing and analysis, to prepare for a healthcare career.</p>
+            </div>
+            <div class="course-item">
+                <h3>Computer Maintenance Programming Assistant</h3>
+                <p>Learn computer maintenance and programming fundamentals to build a strong foundation for technical support roles.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Paramedical Courses -->
+    <div id="paramedical-courses" class="course-details hidden">
+        <h2>Paramedical Courses</h2>
+        <div class="course-list">
+            <div class="course-item">
+                <h3>BSc Medical Lab Science</h3>
+                <p>Develop skills in laboratory techniques and diagnostics to prepare for a career in medical laboratories and healthcare settings.</p>
+            </div>
+            <div class="course-item">
+                <h3>BSc Operating Theatre Technology</h3>
+                <p>Gain knowledge and hands-on experience in operating theatre procedures and patient care during surgeries.</p>
+            </div>
+            <div class="course-item">
+                <h3>BSc Radio Medical Imaging Technology</h3>
+                <p>Learn advanced imaging technologies such as X-rays, CT scans, and MRIs, and build a career in diagnostic radiology.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    
+
+
+
+
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <!-- Have a Questions Section -->
+            <div class="footer-section">
+                <h2 class="footer-heading">Have a Questions?</h2>
+                <ul class="footer-contact-info">
+                    <li>
+                        <a href="https://www.google.com/maps?q=203+Fake+St+Mountain+View+San+Francisco+California+USA" target="_blank">
+                            <img src="images/icons/map.png" alt="Address Icon" class="contact-icon">
+                            203 Fake St. Mountain View, San Francisco, California, USA
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tel:+23923929210">
+                            <img src="images/icons/phone.png" alt="Phone Icon" class="contact-icon">
+                            +2 392 3929 210
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:info@yourdomain.com">
+                            <img src="images/icons/gmail.png" alt="Email Icon" class="contact-icon">
+                            info@yourdomain.com
+                        </a>
+                    </li>
+                </ul>
+            </div>
+    
+            <!-- Quick Links Section -->
+            <div class="footer-section">
+                <h2 class="footer-heading">Quick Links</h2>
+                <ul class="footer-links">
+                    <li><a href="index.htm">Home</a></li>
+                    <li><a href="about-us.htm">About</a></li>
+                    <li><a href="services.htm">Services</a></li>
+                    <li><a href="#">Departments</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+    
+            <!-- Connect With Us Section -->
+            <div class="footer-section">
+                <h2 class="footer-heading">Connect With Us</h2>
+                <div class="social-links">
+                    <a href="https://twitter.com" target="_blank" class="social-icon">
+                        <img src="images/icons/twitter.png" alt="Twitter Icon" class="social-icon-img"> Twitter
+                    </a>
+                    <a href="https://facebook.com" target="_blank" class="social-icon">
+                        <img src="images/icons/facebook.png" alt="Facebook Icon" class="social-icon-img"> Facebook
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="social-icon">
+                        <img src="images/icons/instagram.png" alt="Instagram Icon" class="social-icon-img"> Instagram
+                    </a>
+                    <a href="https://youtube.com" target="_blank" class="social-icon">
+                        <img src="images/icons/youtube.png" alt="Instagram Icon" class="social-icon-img"> Youtube
+                    </a>
+                </div>
+            </div>            
+        </div>
+    </footer>       
+</body>
+</html>
