@@ -17,7 +17,22 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    // Hero Parallax Effect
+    function handleHeroParallax() {
+        const scrollPosition = window.scrollY;
+
+        // Hero Image Parallax
+        const heroImage = document.querySelector(".hero img");
+        if (heroImage) {
+            heroImage.style.transform = `translateY(${scrollPosition * -0.3}px)`;
+        }
+    }
+
     // Attach Event Listeners
     document.querySelector('.menu-icon-container').addEventListener("click", toggleMenu);
     document.addEventListener("click", closeMenu);
+    window.addEventListener("scroll", handleHeroParallax);
+
+    // Run Hero Parallax on page load
+    handleHeroParallax();
 });

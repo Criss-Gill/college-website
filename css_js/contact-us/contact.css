@@ -1,0 +1,170 @@
+
+/* Contact Us Section */
+.contact-us h1 {
+  color: #0056b3;
+  margin-bottom: 15px;
+}
+
+.contact-us p {
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+/* Get in Touch Section */
+.contact-box form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-box label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.contact-box input,
+.contact-box textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-box button {
+  background-color: #0056b3;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-box button:hover {
+  background-color: #003d80;
+}
+
+/* Visit Us Section */
+.map iframe {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+}
+
+.visit-us p {
+  margin-bottom: 10px;
+  line-height: 1.8;
+}
+
+/* Phone Numbers Section */
+.phone-numbers p {
+  margin-bottom: 10px;
+}
+
+.phone-numbers a {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+.phone-numbers a:hover {
+  text-decoration: underline;
+}
+
+/* Email Addresses Section */
+.email-addresses p {
+  margin-bottom: 10px;
+}
+
+.email-addresses a {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+.email-addresses a:hover {
+  text-decoration: underline;
+}
+
+/* Follow Us Section */
+.social-media-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.social-media-links ul li {
+  margin-bottom: 10px;
+}
+
+.social-media-links ul li a {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  color: #0056b3;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.social-media-links ul li a:hover {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+/* FAQs Section */
+.faqs p {
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+.faqs strong {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Office Timings Section */
+.office-timings p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Support for Different Users Section */
+.support-section p {
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+.support-section strong {
+  color: #0056b3;
+}
+
+/* Success Stories Section */
+.success-stories a {
+  color: #0056b3;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.success-stories a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design (Applies to All Sections) */
+@media (max-width: 768px) {
+  section {
+      padding: 15px;
+  }
+
+  .contact-box input,
+  .contact-box textarea {
+      padding: 8px;
+  }
+
+  .contact-box button {
+      padding: 8px;
+  }
+
+  .map iframe {
+      height: 250px;
+  }
+}

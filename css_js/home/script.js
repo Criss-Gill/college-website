@@ -41,12 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
     function handleParallaxEffects() {
         const scrollPosition = window.scrollY;
 
-        // Hero Image Parallax
-        const heroImage = document.querySelector(".hero img");
-        if (heroImage) {
-            heroImage.style.transform = `translateY(${scrollPosition * -0.3}px)`;
-        }
-
         // Landscape Image Parallax
         const landscapeImage = document.querySelector(".landscape-section img");
         if (landscapeImage) {
