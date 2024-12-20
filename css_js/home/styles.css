@@ -370,6 +370,16 @@
     }
 }
 
+/* Remove underline and reset link styling */
+.course-link {
+    text-decoration: none; /* Remove the underline */
+    color: inherit; /* Inherit text color from the parent */
+}
+
+.course-link:hover {
+    cursor: pointer; /* Make it clear the element is clickable */
+}
+
 
 /* Admission Enquiry Section */
 .admission-enquiry {

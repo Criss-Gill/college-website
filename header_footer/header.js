@@ -28,10 +28,27 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    // Smooth Scroll to Next Section
+    function scrollToNextSection() {
+        const heroSection = document.querySelector('.hero');
+        const nextSection = heroSection.nextElementSibling; // Select the section immediately after the hero section
+
+        if (nextSection) {
+            // Smoothly scroll to the next section
+            nextSection.scrollIntoView({ behavior: "smooth" });
+        }
+    }
+
     // Attach Event Listeners
     document.querySelector('.menu-icon-container').addEventListener("click", toggleMenu);
     document.addEventListener("click", closeMenu);
     window.addEventListener("scroll", handleHeroParallax);
+
+    // Attach Scroll Event to "Get Started" Button
+    const getStartedButton = document.querySelector('.hero button');
+    if (getStartedButton) {
+        getStartedButton.addEventListener("click", scrollToNextSection);
+    }
 
     // Run Hero Parallax on page load
     handleHeroParallax();
