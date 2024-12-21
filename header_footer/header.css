@@ -149,26 +149,53 @@ body {
 }
 
 /* Hero Section Styles */
+/* Hero Section Styles */
 .hero {
     position: relative;
     width: 100%;
     height: 100vh; /* Ensures the hero section covers the full viewport height */
     overflow: hidden; /* Prevents content from overflowing the section */
 }
-.hero img {
+
+/* Parallax Container */
+.hero-parallax {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transform: translateY(0); /* Initial position for parallax */
+    transition: transform 0.1s ease-out;
+}
+
+/* Hero Images Container */
+.hero-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Ensure images don’t overflow */
+}
+
+/* Hero Images */
+.hero-images img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 150%;
-    object-fit: cover; /* Ensures the image doesn't distort */
-    transform: translateY(0); /* Initial position */
-    z-index: -1; /* Ensure it's behind the text */
-    transition: transform 0.1s ease-out; /* Smooth movement */
-    animation: fadeIn 2s ease-in-out; /* 2-second fade-in effect */
-    opacity: 0; /* Ensures it's hidden before animation starts */
-    animation-fill-mode: forwards; /* Keeps the final state (fully visible) */
+    object-fit: cover;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 1s ease-in-out; /* Smooth fade effect */
 }
+
+/* Active Image */
+.hero-images img.active {
+    opacity: 1; /* Make the active image visible */
+}
+
 
 /* Black Transparent Overlay */
 .hero::before {
@@ -180,7 +207,7 @@ body {
     height: 100%;
     background: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
     z-index: 1; /* Ensure the overlay is above the image but below the text */
-    animation: fadeIn 2s ease-in-out;
+    animation: fadeIn 0.5s ease-in-out;
     opacity: 0; /* Hidden before animation starts */
     animation-fill-mode: forwards;
 }
@@ -232,6 +259,37 @@ body {
 .hero-text button:hover {
     background-color: #e65c00;
 }
+
+/* Letter animation styles */
+.letter {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInLetter 0.5s ease forwards;
+}
+
+@keyframes fadeInLetter {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* Highlighted word styles */
+/* General styles for the highlighted word */
+#hero-highlight span {
+    display: inline-block;
+    opacity: 0;
+    color: #ffb98b;
+    transition: opacity 0.1s ease-in-out;
+}
+
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
